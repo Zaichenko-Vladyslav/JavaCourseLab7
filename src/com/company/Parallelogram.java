@@ -17,45 +17,46 @@ package com.company;
 
 public class Parallelogram implements IGeometry, IPackaging {
 
-    private int biggestSide;
-    private int smallerSide;
-    private double Angle;
+    private int bigSide;
+    private int smallSide;
+    private double angle;
 
     // Constructors for class Parallelogram
 
     public Parallelogram() {
+
     }
 
-    public Parallelogram(int biggestSide, int smallerSide, double Angle) {
-        this.biggestSide = biggestSide;
-        this.smallerSide = smallerSide;
-        this.Angle = Angle;
+    public Parallelogram(int bigSide, int smallSide, double angle) {
+        this.bigSide = bigSide;
+        this.smallSide = smallSide;
+        this.angle = angle;
     }
 
     // Getters and setters for class Parallelogram
 
-    public int getBiggestSide() {
-        return biggestSide;
+    public int getBigSide() {
+        return bigSide;
     }
 
-    public void setBiggestSide(int biggestSide) {
-        this.biggestSide = biggestSide;
+    public void setBigSide(int bigSide) {
+        this.bigSide = bigSide;
     }
 
-    public int getSmallerSide() {
-        return smallerSide;
+    public int getSmallSide() {
+        return smallSide;
     }
 
-    public void setSmallerSide(int smallerSide) {
-        this.smallerSide = smallerSide;
+    public void setSmallSide(int smallSide) {
+        this.smallSide = smallSide;
     }
 
     public double getAngle() {
-        return Angle;
+        return angle;
     }
 
-    public void setAngle(double Angle) {
-        this.Angle = Angle;
+    public void setAngle(double angle) {
+        this.angle = angle;
     }
 
     // Methods for class Parallelogram
@@ -64,15 +65,14 @@ public class Parallelogram implements IGeometry, IPackaging {
 
     @Override
     public double getArea() {
-        return this.getBiggestSide() * this.getSmallerSide()
-                * Math.sin(this.getAngle());
+        return this.getBigSide() * this.getSmallSide() * Math.sin(this.getAngle());
     }
 
     // Method getLinearLength() for class Parallelogram
 
     @Override
     public double getLinearLength() {
-        return 2 * (this.getSmallerSide() + this.getBiggestSide());
+        return 2 * (this.getSmallSide() + this.getBigSide());
     }
 
     // Method toJSON() for class Parallelogram
@@ -80,9 +80,9 @@ public class Parallelogram implements IGeometry, IPackaging {
     @Override
     public String toJSON() {
         String json = "Parallelogram {"
-                + "\""  + "biggestSide\": " + this.getBiggestSide()
+                + "\""  + "biggestSide\": " + this.getBigSide()
                 + ", "
-                + "\""  + "smallerSide\": " + this.getSmallerSide()
+                + "\""  + "smallerSide\": " + this.getSmallSide()
                 + ", "
                 + "\""  + "angle\": " + this.getAngle()
                 + ", "
@@ -98,8 +98,8 @@ public class Parallelogram implements IGeometry, IPackaging {
     @Override
     public String toXML() {
         String xml = "<Parallelogram>"
-                + "<biggestSide>" + this.getBiggestSide() + "</biggestSide>"
-                + "<smallerSide>" + this.getSmallerSide() + "</smallerSide>"
+                + "<biggestSide>" + this.getBigSide() + "</biggestSide>"
+                + "<smallerSide>" + this.getSmallSide() + "</smallerSide>"
                 + "<angle>" + this.getAngle() + "</angle>"
                 + "<linearLength>" + this.getLinearLength() + "</linearLength>"
                 + "<area>" + this.getArea() + "</area>"
@@ -112,12 +112,12 @@ public class Parallelogram implements IGeometry, IPackaging {
     @Override
     public String toConsole() {
         return "Parallelogram {" + "\n" +
-                "Big Side = " + this.getBiggestSide() + "," + "\n" +
-                "Small Side = " + this.getSmallerSide() + "," + "\n" +
+                "Big Side = " + this.getBigSide() + "," + "\n" +
+                "Small Side = " + this.getSmallSide() + "," + "\n" +
                 "Angle = " + this.getAngle() + "," + "\n" +
                 "Linear Length = " + this.getLinearLength() + "," + "\n" +
                 "Area = " + this.getArea() +
-                '}';
+                "\n" + '}';
     }
 
     // Method toString() for class Parallelogram
@@ -125,12 +125,11 @@ public class Parallelogram implements IGeometry, IPackaging {
     @Override
     public String toString() {
         return "Parallelogram {" +
-                "Big Side = " + this.getBiggestSide() +
-                ", Small Side = " + this.getSmallerSide() +
+                "Big Side = " + this.getBigSide() +
+                ", Small Side = " + this.getSmallSide() +
                 ", Angle = " + this.getAngle() +
                 ", Linear Length = " + this.getLinearLength() +
                 ", Area = " + this.getArea() +
                 '}';
     }
-
 }
